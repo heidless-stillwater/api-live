@@ -35,15 +35,18 @@ gcloud run deploy --image gcr.io/pfolio-deploy-1/finance-frontend --platform man
 gcloud config set project pfolio-deploy-1
 
 ### initialise DB Instance (takes some time  - take a break and let it process)
+# MANUALLY create instance using info below (particularly PASSWORD - havana11)
 gcloud sql instances create expenses-instance-0 \
     --project pfolio-deploy-1 \
     --database-version POSTGRES_15 \
     --tier db-f1-micro \
     --region europe-west2
 
-Created [https://sqladmin.googleapis.com/sql/v1beta4/projects/pfolio-deploy-1/instances/expenses-instance-0].
-NAME                 DATABASE_VERSION  LOCATION        TIER         PRIMARY_ADDRESS  PRIVATE_ADDRESS  STATUS
-expenses-instance-0  POSTGRES_15       europe-west2-c  db-f1-micro  34.147.208.38    -                RUNNABLE
+IP: 
+34.147.216.97
+
+CONNECTION NAME:
+pfolio-deploy-1:europe-west2:expenses-instance-0
 
 gcloud sql databases create expenses-db-0 \
     --instance expenses-instance-0
@@ -95,6 +98,7 @@ http://localhost/pgadmin4
 
 ```
 INSTANCE
+<set password>
 expenses-instance-0
 PWD:
 havana11
