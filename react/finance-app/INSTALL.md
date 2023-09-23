@@ -2,6 +2,16 @@
 # install
 npm install bootstrap react-bootstrap
 
+# bootstrap docs
+https://react-bootstrap.netlify.app/docs/components/accordion/
+
+https://getbootstrap.com/docs/3.4/css/
+
+# boostrap styling tut
+https://www.youtube.com/watch?v=nCX3QVl_PiI
+
+
+
 App.js
 ```
 import Button from 'react-bootstrap/Button';
