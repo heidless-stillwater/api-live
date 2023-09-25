@@ -1,13 +1,20 @@
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv, dotenv_values
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from google.cloud.sql.connector import Connector, IPTypes
 
+env_file = find_dotenv(".env")
+print(f'env_file: {env_file}')
+
 # load env vars
-load_dotenv()
+load_dotenv(env_file)
+
+config = dotenv_values(".env")  # config = {"USER": "foo", "EMAIL": "foo@example.org"}
+
+print(f'config: {config}')
 
 
 def init_connection_engine(connector: Connector) -> Engine:
